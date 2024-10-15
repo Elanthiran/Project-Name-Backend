@@ -21,6 +21,10 @@ app.use(parser.json());
 
 app.use('/api/auth', authRoutes);
 
+app.get("/",(req,res)=>{
+  res.send("backend server connected successfully")
+})
+
 app.get("/getUsers", async (req, res) => {
   try {
     const inside = await data.find();
